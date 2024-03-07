@@ -6,7 +6,7 @@
 - **Authors' website**: https://pqmayo.org
 - **Specification version**: 1.1.
 - **Primary Source**<a name="primary-source"></a>:
-  - **Source**: https://github.com/PQCMayo/MAYO-C/commit/640ec29a894f60802837f71217ff78be861e6ae1 with copy_from_upstream patches
+  - **Source**: https://github.com/PQCMayo/MAYO-C/commit/70659b2ab1b05631fccd3c94381cfbeb0143c2d5 with copy_from_upstream patches
   - **Implementation license (SPDX-Identifier)**: Apache-2.0
 
 
