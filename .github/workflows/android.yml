@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
 
   android:
+    if: github.event_name == 'pull_request' || endsWith( github.event.head_commit.message, '[run ci]' )
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
 
   zephyr_test:
+    if: github.event_name == 'pull_request' || endsWith( github.event.head_commit.message, '[run ci]' )
     runs-on: ubuntu-22.04
     container: ghcr.io/zephyrproject-rtos/ci:latest
     env:

@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
 
   apple-mobile:
+    if: github.event_name == 'pull_request' || endsWith( github.event.head_commit.message, '[run ci]' )
     runs-on: macos-latest
     strategy:
       fail-fast: false

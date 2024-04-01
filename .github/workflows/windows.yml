@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
 
   windows-arm64:
+    if: github.event_name == 'pull_request' || endsWith( github.event.head_commit.message, '[run ci]' )
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v3
@@ -14,6 +15,7 @@ jobs:
         run: cmake --build build
 
   windows-x86:
+    if: github.event_name == 'pull_request' || endsWith( github.event.head_commit.message, '[run ci]' )
     runs-on: windows-2022
     strategy:
       fail-fast: false
