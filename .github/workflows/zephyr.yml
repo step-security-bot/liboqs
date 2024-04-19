@@ -2,6 +2,9 @@ name: Zephyr tests
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
 
   zephyr_test:
@@ -17,6 +20,11 @@ jobs:
             - zephyr-ref: v3.5.0
 
     steps:
+        - name: Harden Runner
+          uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+          with:
+            egress-policy: audit
+
         - name: Init Zephyr workspace
           run: |
             mkdir zephyr && cd zephyr
